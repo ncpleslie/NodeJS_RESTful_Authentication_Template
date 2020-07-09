@@ -11,6 +11,9 @@ const errorHandling = require('./middleware/error');
 
 const app = express();
 
+// To ensure localhost isn't ratelimited
+//app.set('trust proxy', 1);
+
 // Middleware
 app.use(express.json());
 app.use(cors());
@@ -22,6 +25,7 @@ app.use('/', mainRoutes);
 app.use('/user', authRoutes);
 
 // Generic Error Handling Middleware
+app.use(errorHandling.notFound);
 app.use(errorHandling.catchAll);
 
 // Connect to MongoDB
