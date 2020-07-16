@@ -1,16 +1,20 @@
 {
-  "name": "basic_restful_api",
+  "name": "basic_restful_api_w_auth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4",
+    "sinon": "^9.0.2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
